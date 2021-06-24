@@ -29,6 +29,126 @@
       ul.a{
         list-style-type: square;
       }
+
+      .scroll-top-baru {
+        position: fixed;
+        bottom: 30px;
+        right: 20px;
+        font-weight: 300;
+        opacity: 0;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: .5s ease-in-out; 
+      }
+      .header-scrolled .scroll-top-baru {
+        opacity: 0.6; 
+      }
+      .scroll-top-baru:hover {
+        opacity: 1;
+        transform: translateY(-2px);
+        transition: .2s ease-out; 
+      }
+      .scroll-top-baru .fa {
+        font-size: 24px;
+        margin-bottom: 4px; 
+      }
+
+
+      .scroll-top-button-experience {
+        position: fixed;
+        bottom: 250px;
+        right: 30px;
+        font-weight: 300;
+        opacity: 0;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: .5s ease-in-out; 
+      }
+      .header-scrolled .scroll-top-button-experience {
+        opacity: 1; 
+      }
+      .scroll-top-button-experience:hover {
+        /*display: none;*/
+        opacity: 1;
+        transform: translateY(-2px);
+        transition: .2s ease-in-out; 
+      }
+      .scroll-top-button-experience .fa {
+        font-size: 24px;
+        margin-bottom: 4px; 
+      }
+
+      .scroll-top-button-project {
+        position: fixed;
+        bottom: 200px;
+        right: 30px;
+        font-weight: 300;
+        opacity: 0;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: .5s ease-in-out; 
+      }
+      .header-scrolled .scroll-top-button-project {
+        opacity: 1; 
+      }
+      .scroll-top-button-project:hover {
+        /*display: none;*/
+        opacity: 1;
+        transform: translateY(-2px);
+        transition: .2s ease-in-out; 
+      }
+      .scroll-top-button-project .fa {
+        font-size: 24px;
+        margin-bottom: 4px; 
+      }
+
+      .scroll-top-button-skill {
+        position: fixed;
+        bottom: 150px;
+        right: 30px;
+        font-weight: 300;
+        opacity: 0;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: .5s ease-in-out; 
+      }
+      .header-scrolled .scroll-top-button-skill {
+        opacity: 1; 
+      }
+      .scroll-top-button-skill:hover {
+        /*display: none;*/
+        opacity: 1;
+        transform: translateY(-2px);
+        transition: .2s ease-in-out; 
+      }
+      .scroll-top-button-skill .fa {
+        font-size: 24px;
+        margin-bottom: 4px; 
+      }
+
+      .scroll-top-button-contact {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        font-weight: 300;
+        opacity: 0;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: .5s ease-in-out; 
+      }
+      .header-scrolled .scroll-top-button-contact {
+        opacity: 1; 
+      }
+      .scroll-top-button-contact:hover {
+        /*display: none;*/
+        opacity: 1;
+        transform: translateY(-2px);
+        transition: .2s ease-in-out; 
+      }
+      .scroll-top-button-contact .fa {
+        font-size: 24px;
+        margin-bottom: 4px; 
+      }
     </style>
   </head>
 
@@ -69,14 +189,15 @@
             </li>
 
             <li class="nav-item nav-mega">
-              <a class="nav-link" href="#contact">Contact</a>
+              <a class="nav-link" href="#skill">Skill</a>
               
             </li>
 
             <li class="nav-item nav-mega">
-              <a class="nav-link" href="#skill">Skill</a>
+              <a class="nav-link" href="#contact">Contact</a>
               
             </li>
+
 
           </ul>
         </section>
@@ -793,8 +914,8 @@
               <a class="nav-link" href="#header">Home</a>
               <a class="nav-link" href="#experience">Experience</a>
               <a class="nav-link" href="#project">Project</a>
-              <a class="nav-link" href="#contact">Contact</a>
               <a class="nav-link" href="#skill">Skill</a>
+              <a class="nav-link" href="#contact">Contact</a>
               <a class="nav-link" href="#"></a>
             </div>
           </div>
@@ -803,12 +924,52 @@
       </div>
     </footer><!-- /.footer -->
 
+    <!-- Scroll top -->
+    <button class="btn btn-circle btn-primary scroll-top-baru" id="scroll-top-baru-up"  onclick="openForm()"><i class="fa fa-angle-up"></i></button>
+    <button class="btn btn-circle btn-primary scroll-top-baru" id="scroll-top-baru-down" onclick="closeForm()"><i  class="fa fa-angle-down"></i></button>
+
+    <a class="btn btn-lg btn-round btn-primary w-150 scroll-top-button-experience" onclick="closeForm()" href="#experience">Experience</a>
+    <a class="btn btn-lg btn-round btn-primary w-150 scroll-top-button-project" onclick="closeForm()" href="#project">Project</a>
+    <a class="btn btn-lg btn-round btn-primary w-150 scroll-top-button-skill" onclick="closeForm()" href="#skill">Skill</a>
+    <a class="btn btn-lg btn-round btn-primary w-150 scroll-top-button-contact" onclick="closeForm()" href="#contact">Contact</a>
+
 
     <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/page.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/brands.js"></script>
     <script src="assets/js/fontawesome.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#scroll-top-baru-down').addClass('d-none');
+        $('.scroll-top-button-experience').addClass('d-none');
+        $('.scroll-top-button-project').addClass('d-none');
+        $('.scroll-top-button-skill').addClass('d-none');
+        $('.scroll-top-button-contact').addClass('d-none');
+      });
+
+      function openForm(){
+        $('#scroll-top-baru-up').addClass('d-none');
+        $('#scroll-top-baru-down').removeClass('d-none');
+
+        $('.scroll-top-button-experience').removeClass('d-none');
+        $('.scroll-top-button-project').removeClass('d-none');
+        $('.scroll-top-button-skill').removeClass('d-none');
+        $('.scroll-top-button-contact').removeClass('d-none');
+      }
+
+      function closeForm(){
+        $('#scroll-top-baru-up').removeClass('d-none');
+        $('#scroll-top-baru-down').addClass('d-none');
+
+        $('.scroll-top-button-experience').addClass('d-none');
+        $('.scroll-top-button-project').addClass('d-none');
+        $('.scroll-top-button-skill').addClass('d-none');
+        $('.scroll-top-button-contact').addClass('d-none');
+      }
+    </script>
 
   </body>
 </html>
